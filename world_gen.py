@@ -2,9 +2,6 @@
 from lxml import etree as ET
 from grid import CellGrid
 
-
-
-
 def worldGenerator(grid):
     sdf = ET.Element("sdf",version="1.4")
 
@@ -31,6 +28,8 @@ def worldGenerator(grid):
     #time = ET.SubElement(sky,"time")
     #time.text  = w.time
 
+
+    #including models
     pos = [0,0,0,0,0,1.57]
     for i in range(grid.totalRows):
         pos[1]=0
@@ -55,12 +54,9 @@ def worldGenerator(grid):
                 pose = ET.SubElement(include,"pose")
                 pose.text = " ".join(str(i) for i in pos)
 
-
             pos[1]+=10
         pos[0]+=10
 
-
-    #including models
     include = ET.SubElement(world,"include")
     uri = ET.SubElement(include,"uri")
     uri.text = "model://sun"
@@ -68,6 +64,3 @@ def worldGenerator(grid):
     #print ET.tostring(sdf,pretty_print=True,xml_declaration=True)
     tree = ET.ElementTree(sdf)
     tree.write('road_test.world', pretty_print=True, xml_declaration=True)
-
-#if __name__ == "__main__":
-#    worldGenerator()

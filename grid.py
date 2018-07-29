@@ -9,7 +9,7 @@ class Cell():
     EMPTY_COLOR_BORDER = "black"
 
     def __init__(self, master, x, y, size):
-        """ Constructor of the object called by Cell(...) """
+        #Constructor of the object called by Cell
         self.master = master
         self.abs = x
         self.ord = y
@@ -17,19 +17,19 @@ class Cell():
         self.fill= 0
 
     def _switch(self):
-        """ Switch if the cell is filled or not. """
+        #Switch the cell fill color
         self.fill+=1
 
     def draw(self):
-        """ order to the cell to draw its representation on the canvas """
+        #Fill selected cell on grid canvas
         if self.master != None :
 
             if self.fill%3==1:
-                fill = "green"#Cell.EMPTY_COLOR_BG
-                outline = "green"#Cell.EMPTY_COLOR_BORDER
+                fill = "dark blue"
+                outline = "dark blue"
             elif self.fill%3==2:
-                fill = "red"
-                outline = "red"
+                fill = "blue"
+                outline = "blue"
             else:
                 fill = "white"
                 outline = "black"
@@ -77,7 +77,7 @@ class CellGrid(Canvas):
         self.switched = []
 
         #bind click action
-        self.bind("<Button-1>", self.handleMouseClick)  
+        self.bind("<Button-1>", self.handleMouseClick)
         #bind moving while clicking
         #   self.bind("<B1-Motion>", self.handleMouseMotion)
         #bind release button action - clear the memory of midified cells.
@@ -135,11 +135,11 @@ class CellGrid(Canvas):
 if __name__ == "__main__" :
     app = Tk()
 
-    grid = CellGrid(app, 10, 10, 10)
+    grid = CellGrid(app, 10, 10, 25)
     grid.pack()
 
     app.mainloop()
     grid.printgrid()
-    
+
     worldGenerator(grid)
     os.system("gazebo road_test.world")
