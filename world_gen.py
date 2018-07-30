@@ -30,16 +30,26 @@ def worldGenerator(grid):
 
 
     #including models
-    pos = [0,0,0,0,0,1.57]
+    
+    init_x = ((grid.totalRows/2)*-10)+5
+    init_y = ((grid.totalColumns/2)*-10)+5
+
+    pos = [init_x,init_y,0,0,0,1.57]
     for i in range(grid.totalRows):
-        pos[1]=0
+        pos[1] = init_y
         for j in range(grid.totalColumns):
             pos[5]=1.57
             if(grid.CompleteGrid[i][j]==1):
-                if(grid.CompleteGrid[i-1][j]==2 or grid.CompleteGrid[i+1][j]==2):
-                    pos[5]=0
-                elif(grid.CompleteGrid[i-1][j]==1 or grid.CompleteGrid[i+1][j]==1):
-                    pos[5]=0
+                if(i==grid.totalColumns-1):
+                    if(grid.CompleteGrid[i-1][j]==2):
+                        pos[5]=0
+                    elif(grid.CompleteGrid[i-1][j]==1):
+                        pos[5]=0
+                else:
+                    if(grid.CompleteGrid[i-1][j]==2 or grid.CompleteGrid[i+1][j]==2):
+                        pos[5]=0
+                    elif(grid.CompleteGrid[i-1][j]==1 or grid.CompleteGrid[i+1][j]==1):
+                        pos[5]=0
 
                 include = ET.SubElement(world,"include")
                 uri = ET.SubElement(include,"uri")
