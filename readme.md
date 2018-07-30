@@ -5,7 +5,7 @@ Road Grid is generated using the input provided by the user in the grid as shown
 
 
 
-<img src="https://image.ibb.co/kvXpG8/Grid.png" height=280>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://image.ibb.co/cJBYb8/Roadmap.png" alt="roadmap" border="0" height=200>
+<img src="https://image.ibb.co/kvXpG8/Grid.png" height=280>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://image.ibb.co/cJBYb8/Roadmap.png" alt="roadmap" border="0" height=260>
 
 
 
