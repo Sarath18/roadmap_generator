@@ -137,7 +137,7 @@ if __name__ == "__main__" :
 
     grid = CellGrid(app, 10, 10, 25)
     grid.pack()
-
+    Button(app,text="Generate Roadmap",command=app.destroy).pack()
     app.mainloop()
     grid.printgrid()
 
