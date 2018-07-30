@@ -1,11 +1,11 @@
 # Road Generator
-A wizard written in python that helps in creating realistic city roadmaps for *Gazebo* with appropriate textures and lighting.
+A wizard written in python that helps in creating realistic city roadmaps for *Gazebo* desired ambient lighting.
 
 Road Grid is generated using the input provided by the user in the grid as shown below. It is then generated into a matrix which is inturn used to find position and place the road blocks.
 
 
 
-<img src="https://image.ibb.co/cvtHZT/grid.png"><img src="https://image.ibb.co/gtLmTo/roadmap.png" alt="roadmap" border="0" height=200>
+<img src="https://image.ibb.co/kvXpG8/Grid.png" height=280>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://image.ibb.co/cJBYb8/Roadmap.png" alt="roadmap" border="0" height=200>
 
 
 
@@ -29,7 +29,7 @@ Install the required files to run on your local system:
 
 - Cloning the repository
 
-      git clone
+      git clone https://github.com/Sarath18/roadmap_generator
 
 - lxml
 
