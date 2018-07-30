@@ -30,7 +30,7 @@ def worldGenerator(grid):
 
 
     #including models
-    
+
     init_x = ((grid.totalRows/2)*-10)+5
     init_y = ((grid.totalColumns/2)*-10)+5
 
@@ -44,6 +44,11 @@ def worldGenerator(grid):
                     if(grid.CompleteGrid[i-1][j]==2):
                         pos[5]=0
                     elif(grid.CompleteGrid[i-1][j]==1):
+                        pos[5]=0
+                elif(i==0):
+                    if(grid.CompleteGrid[i+1][j]==2):
+                        pos[5]=0
+                    elif(grid.CompleteGrid[i+1][j]==1):
                         pos[5]=0
                 else:
                     if(grid.CompleteGrid[i-1][j]==2 or grid.CompleteGrid[i+1][j]==2):
