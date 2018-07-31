@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from tkinter import *
 import numpy as np
 from world_gen import *
@@ -132,14 +133,15 @@ class CellGrid(Canvas):
             self.CompleteGrid[row][col] = 1
 
 
-if __name__ == "__main__" :
+#if __name__ == "__main__" :
+def OpenGrid(w):
     app = Tk()
 
-    grid = CellGrid(app, 10, 10, 25)
+    grid = CellGrid(app,w.rows,w.cols,25)
     grid.pack()
     Button(app,text="Generate Roadmap",command=app.destroy).pack()
     app.mainloop()
     grid.printgrid()
 
-    worldGenerator(grid)
+    worldGenerator(grid,w)
     os.system("gazebo road_test.world")

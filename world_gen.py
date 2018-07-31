@@ -1,8 +1,7 @@
-#!usr/bin/env python
+#!usr/bin/python3
 from lxml import etree as ET
-from grid import CellGrid
 
-def worldGenerator(grid):
+def worldGenerator(grid,w):
     sdf = ET.Element("sdf",version="1.4")
 
     world = ET.SubElement(sdf,"world",name="road test")
@@ -10,8 +9,8 @@ def worldGenerator(grid):
     #setting up the scene
     scene = ET.SubElement(world,"scene")
 
-    #ambient = ET.SubElement(scene,"ambient")
-    #ambient.text = w.ambient
+    ambient = ET.SubElement(scene,"ambient")
+    ambient.text = w.ambient
 
     #Day: 120 120 120 255
     #Night: 20 40 50 255
@@ -25,8 +24,8 @@ def worldGenerator(grid):
     speed = ET.SubElement(clouds,"speed")
     speed.text = "12"
 
-    #time = ET.SubElement(sky,"time")
-    #time.text  = w.time
+    time = ET.SubElement(sky,"time")
+    time.text  = w.time
 
 
     #including models
