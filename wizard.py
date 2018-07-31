@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 from tkinter import *
 from grid import *
-from input_widget import *
 
 class worldSettings(object):
     def __init__(self):
