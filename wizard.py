@@ -43,6 +43,24 @@ class worldSettings(object):
 if __name__ == "__main__":
     #m = int(input("Enter number of rows: "))
     #n = int(input("Enter number of cols: "))
+
+    items = os.listdir(os.path.expanduser("~/.gazebo/models/"))
+    intersection_falg = 0
+    straight_falg = 0
+    for item in items:
+        if "road_intersection" == item:
+            intersection_falg = 1
+        if "road_straight" == item:
+            straight_falg = 1
+
+    if straight_falg == 0:
+        os.system("cp -r road_straight ~/.gazebo/models/")
+
+    if intersection_falg == 0:
+        os.system("cp -r road_intersection ~/.gazebo/models/")
+
+
+
     rows = 0
     cols = 0
     root = Tk()
@@ -97,3 +115,4 @@ if __name__ == "__main__":
     print(w.rows,w.cols,w.time,w.ambient)
 
     OpenGrid(w)
+    os.system("gazebo road.world")

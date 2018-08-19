@@ -144,4 +144,3 @@ def OpenGrid(w):
     grid.printgrid()
 
     worldGenerator(grid,w)
-    os.system("gazebo road_test.world")

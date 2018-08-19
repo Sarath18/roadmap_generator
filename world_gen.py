@@ -57,14 +57,14 @@ def worldGenerator(grid,w):
 
                 include = ET.SubElement(world,"include")
                 uri = ET.SubElement(include,"uri")
-                uri.text = "model://road_test"
+                uri.text = "model://road_straight"
                 pose = ET.SubElement(include,"pose")
                 pose.text = " ".join(str(i) for i in pos)
 
             elif(grid.CompleteGrid[i][j]==2):
                 include = ET.SubElement(world,"include")
                 uri = ET.SubElement(include,"uri")
-                uri.text = "model://road_test2"
+                uri.text = "model://road_intersection"
                 pose = ET.SubElement(include,"pose")
                 pose.text = " ".join(str(i) for i in pos)
 
@@ -77,4 +77,4 @@ def worldGenerator(grid,w):
 
     #print ET.tostring(sdf,pretty_print=True,xml_declaration=True)
     tree = ET.ElementTree(sdf)
-    tree.write('road_test.world', pretty_print=True, xml_declaration=True)
+    tree.write('road.world', pretty_print=True, xml_declaration=True)
